@@ -44,4 +44,9 @@ describe BestTravel do
     ts = [50]
     expect(BestTravel.new.execute(163,3,ts)).to eq(nil)
   end
+
+  it "returns 163 for given information" do
+    ts = [50, 55, 56, 57, 58] * 50
+    expect(BestTravel.new.execute(163,3,ts)).to eq(163)
+  end
 end
