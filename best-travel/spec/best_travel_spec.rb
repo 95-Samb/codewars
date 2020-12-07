@@ -26,8 +26,22 @@ describe BestTravel do
     expect(BestTravel.new.execute(4,2,[7,8,2,1])).to eq(3)
   end
 
-  xit "returns 163 for given information" do
+  it "returns 3 for given information" do
+    expect(BestTravel.new.execute(4,2,[7,8,2,1,3])).to eq(4)
+  end
+
+  it "returns 163 for given information" do
     ts = [50, 55, 56, 57, 58]
     expect(BestTravel.new.execute(163,3,ts)).to eq(163)
+  end
+
+  it "returns 163 for given information" do
+    ts = [91, 74, 73, 85, 73, 81, 87]
+    expect(BestTravel.new.execute(230,3,ts)).to eq(228)
+  end
+
+  it "returns 163 for given information" do
+    ts = [50]
+    expect(BestTravel.new.execute(163,3,ts)).to eq(nil)
   end
 end
