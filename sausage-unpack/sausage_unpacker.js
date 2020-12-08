@@ -1,0 +1,4 @@
+exports.sausageUnpacker = (input) => {
+  return ""
+
+}
