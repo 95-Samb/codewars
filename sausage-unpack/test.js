@@ -6,6 +6,12 @@ describe('Unpacking', () => {
   it('returns blank when given blank', () => {
     assert.equal(subject(""), "")
   })
+  it('returns l when given l', () => {
+    assert.equal(subject([["[l]"]]), "l")
+  })
+  it('returns blank when given lx', () => {
+    assert.equal(subject([["[lx]"]]), "")
+  })
 
 
 })
