@@ -22,6 +22,10 @@ describe('Unpacking', () => {
     it('returns blank when given 111 in no packaging', () => {
       assert.equal(subject([["111"]]), "")
     })
-
+  })
+  describe('For two boxes', () => {
+    it('returns l when given [l],notSausage', () => {
+      assert.equal(subject([["[l]","notSausage"]]), "l")
+    })
   })
 })
