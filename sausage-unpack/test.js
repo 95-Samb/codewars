@@ -27,5 +27,19 @@ describe('Unpacking', () => {
     it('returns l when given [l],notSausage', () => {
       assert.equal(subject([["[l]","notSausage"]]), "l")
     })
+    it('returns l1 when given [l],[1]', () => {
+      assert.equal(subject([["[l]","[1]"]]), "l1")
+    })
+    it('returns blank when given x,y', () => {
+      assert.equal(subject([["x","y"]]), "")
+    })
+  })
+  describe('For three or more boxes', () => {
+    it('returns l when given [l],notSausage,alsoNotSausage', () => {
+      assert.equal(subject([["[l]","notSausage","alsoNotSausage"]]), "l")
+    })
+    it('returns @l when given [@],notSausage,[l]', () => {
+      assert.equal(subject([["[@]","notSausage","[l]"]]), "@l")
+    })
   })
 })

@@ -6,37 +6,23 @@ exports.sausageUnpacker = (input) => {
 
   output = ""
 
-  if (input[0][0][0] != "[" || input[0][0][input[0][0].length - 1] != "]") {
-    output += ""
-  }
-  else {
-
-  var sausagBox1 = input[0][0].slice(1,-1)
-
-  var uniqueBoxItems1 = [...new Set(sausagBox1.split(""))]
-
-  if (uniqueBoxItems1.length != 1) {
-    output += ""
-  }
-  else {output += sausagBox1}
-  }
-
-  if (input[0][1]) {
-
-    if (input[0][1][0] != "[" || input[0][1][input[0][1].length - 1] != "]") {
+  for (var i = 0; i <= input[0].length - 1; i++) {
+    if (input[0][i][0] != "[" || input[0][i][input[0][i].length - 1] != "]") {
       output += ""
     }
     else {
 
-    var sausagBox2 = input[0][1].slice(1,-1)
+    var sausagBox = input[0][i].slice(1,-1)
 
-    var uniqueBoxItems2 = [...new Set(sausagBox2.split(""))]
+    var uniqueBoxItems = [...new Set(sausagBox.split(""))]
 
-    if (uniqueBoxItems2.length != 1) {
+    if (uniqueBoxItems.length != 1) {
       output += ""
     }
-    else {output += sausagBox2}
+    else {output += sausagBox}
     }
+
+
   }
 
   return output;
