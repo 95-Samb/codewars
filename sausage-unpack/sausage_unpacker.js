@@ -28,3 +28,9 @@ exports.sausageUnpacker = (input) => {
   return output;
 
 }
+
+exports.truckUnpacker = (input) => {
+
+
+
+  }

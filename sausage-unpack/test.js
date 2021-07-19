@@ -1,9 +1,9 @@
 var assert = require('assert')
 const script = require("./sausage_unpacker")
 
-describe('Unpacking', () => {
+describe('Unpacking a box', () => {
   subject = script.sausageUnpacker
-  describe('For a single box', () => {
+  describe('For a single product', () => {
     it('returns blank when given blank', () => {
       assert.equal(subject(""), "")
     })
@@ -23,7 +23,7 @@ describe('Unpacking', () => {
       assert.equal(subject(["111"]), "")
     })
   })
-  describe('For two boxes', () => {
+  describe('For two products', () => {
     it('returns l when given [l],notSausage', () => {
       assert.equal(subject(["[l]","notSausage"]), "l")
     })
@@ -34,7 +34,7 @@ describe('Unpacking', () => {
       assert.equal(subject(["x","y"]), "")
     })
   })
-  describe('For three or more boxes', () => {
+  describe('For three or more products', () => {
     it('returns l when given [l],notSausage,alsoNotSausage', () => {
       assert.equal(subject(["[l]","notSausage","alsoNotSausage"]), "l")
     })
