@@ -6,13 +6,13 @@ exports.sausageUnpacker = (input) => {
 
   output = ""
 
-  for (var i = 0; i <= input[0].length - 1; i++) {
-    if (input[0][i][0] != "[" || input[0][i][input[0][i].length - 1] != "]") {
+  for (var i = 0; i <= input.length - 1; i++) {
+    if (input[i][0] != "[" || input[i][input[i].length - 1] != "]") {
       output += ""
     }
     else {
 
-    var sausagBox = input[0][i].slice(1,-1)
+    var sausagBox = input[i].slice(1,-1)
 
     var uniqueBoxItems = [...new Set(sausagBox.split(""))]
 
