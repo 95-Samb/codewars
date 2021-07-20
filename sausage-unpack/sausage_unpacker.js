@@ -1,4 +1,5 @@
-exports.sausageUnpacker = (input) => {
+
+const sausageUnpacker = (input) => {
 
   if (input.constructor !== Array) {
     return ""
@@ -31,6 +32,10 @@ exports.sausageUnpacker = (input) => {
 
 exports.truckUnpacker = (input) => {
 
+  return sausageUnpacker(input[0])
 
 
   }
+
+
+exports.sausageUnpacker = sausageUnpacker;

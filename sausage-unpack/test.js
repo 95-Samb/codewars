@@ -2,7 +2,7 @@ var assert = require('assert')
 const script = require("./sausage_unpacker")
 
 describe('Unpacking a box', () => {
-  subject = script.sausageUnpacker
+  let subject = script.sausageUnpacker
   describe('For a single product', () => {
     it('returns blank when given blank', () => {
       assert.equal(subject(""), "")
@@ -42,4 +42,15 @@ describe('Unpacking a box', () => {
       assert.equal(subject(["[@]","notSausage","[l]"]), "@l")
     })
   })
+})
+
+describe('Unpacking a truck', () => {
+  let subject = script.truckUnpacker
+
+  describe('For a single box', () => {
+    it('returns 1 when given [1]', () => {
+      assert.equal(subject([["[1]"]]), "1")
+    })
+  })
+
 })
