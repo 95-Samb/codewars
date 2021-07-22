@@ -70,4 +70,14 @@ describe('Unpacking a truck', () => {
 
   })
 
+  describe('For three or more boxes', () => {
+
+    it('returns 1@ when given [[1]],[[@]],[[@]]', () => {
+      assert.equal(subject([["[1]"],["[@]"],["[@]"]]), "1@@")
+    })
+
+
+
+  })
+
 })

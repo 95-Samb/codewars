@@ -38,6 +38,8 @@ exports.truckUnpacker = (input) => {
 
   if (input[1]) {output += sausageUnpacker(input[1])}
 
+  if (input[2]) {output += sausageUnpacker(input[2])}
+
   return output;
 
 
