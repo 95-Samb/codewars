@@ -51,6 +51,23 @@ describe('Unpacking a truck', () => {
     it('returns 1 when given [1]', () => {
       assert.equal(subject([["[1]"]]), "1")
     })
+
+    it('returns 1@@l when given [[1],[@@],[l]]', () => {
+      assert.equal(subject([["[1]","[@@]","[l]"]]), "1@@l")
+    })
+  })
+
+  describe('For two boxes', () => {
+
+    it('returns 1@ when given [[1]],[[@]]', () => {
+      assert.equal(subject([["[1]"],["[@]"]]), "1@")
+    })
+
+    it('returns 1l@ when given [[1],[l]],[[cheese],[@]]', () => {
+      assert.equal(subject([["[1]","[l]"],["[cheese]","[@]"]]), "1l@")
+    })
+
+
   })
 
 })

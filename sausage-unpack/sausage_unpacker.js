@@ -32,7 +32,13 @@ const sausageUnpacker = (input) => {
 
 exports.truckUnpacker = (input) => {
 
-  return sausageUnpacker(input[0])
+  output = ""
+
+  output +=  sausageUnpacker(input[0])
+
+  if (input[1]) {output += sausageUnpacker(input[1])}
+
+  return output;
 
 
   }
