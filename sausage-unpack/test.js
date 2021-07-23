@@ -53,18 +53,18 @@ describe('Unpacking a truck', () => {
     })
 
     it('returns 1@@l when given [[1],[@@],[l]]', () => {
-      assert.equal(subject([["[1]","[@@]","[l]"]]), "1@@l")
+      assert.equal(subject([["[1]","[@@]","[l]"]]), "1 @ @ l")
     })
   })
 
   describe('For two boxes', () => {
 
     it('returns 1@ when given [[1]],[[@]]', () => {
-      assert.equal(subject([["[1]"],["[@]"]]), "1@")
+      assert.equal(subject([["[1]"],["[@]"]]), "1 @")
     })
 
     it('returns 1l@ when given [[1],[l]],[[cheese],[@]]', () => {
-      assert.equal(subject([["[1]","[l]"],["[cheese]","[@]"]]), "1l@")
+      assert.equal(subject([["[1]","[l]"],["[cheese]","[@]"]]), "1 l @")
     })
 
 
@@ -73,21 +73,21 @@ describe('Unpacking a truck', () => {
   describe('For three or more boxes', () => {
 
     it('returns 1@ when given [[1]],[[@]],[[@]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["[@]"]]), "1@@")
+      assert.equal(subject([["[1]"],["[@]"],["[@]"]]), "1 @ @")
     })
 
     it('returns 1@@1 when given [[1]],[[@]],[[@]],[[1]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["[@]"],["[1]"]]), "1@@1")
+      assert.equal(subject([["[1]"],["[@]"],["[@]"],["[1]"]]), "1 @ @ 1")
     })
 
     it('returns 1@ when given [[1]],[[@]],[@],[[beans]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["@"],["[beans]"]]), "1@")
+      assert.equal(subject([["[1]"],["[@]"],["@"],["[beans]"]]), "1 @")
     })
 
     let test = [["[1]","[@]","@"],["[beans]"],["[l]","chocolate",""]];
 
     it('returns 1@l when given ${test}', () => {
-      assert.equal(subject(test), "1@l")
+      assert.equal(subject(test), "1 @ l")
     })
 
 

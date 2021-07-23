@@ -40,9 +40,9 @@ const truckUnpacker = (input) => {
 
   }
 
-  return output;
+  return output.split("").join(" ");
 
-  }
+}
 
 
 exports.sausageUnpacker = sausageUnpacker;
