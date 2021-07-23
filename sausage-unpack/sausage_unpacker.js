@@ -8,6 +8,7 @@ const sausageUnpacker = (input) => {
   output = ""
 
   for (var i = 0; i <= input.length - 1; i++) {
+
     if (input[i][0] != "[" || input[i][input[i].length - 1] != "]") {
       output += ""
     }
@@ -23,27 +24,26 @@ const sausageUnpacker = (input) => {
     else {output += sausagBox}
     }
 
-
   }
 
   return output;
 
 }
 
-exports.truckUnpacker = (input) => {
+const truckUnpacker = (input) => {
 
   output = ""
 
-  output +=  sausageUnpacker(input[0])
+  for (var i = 0; i <= input.length - 1; i++) {
 
-  if (input[1]) {output += sausageUnpacker(input[1])}
+    if (input[i]) {output += sausageUnpacker(input[i])}
 
-  if (input[2]) {output += sausageUnpacker(input[2])}
+  }
 
   return output;
-
 
   }
 
 
 exports.sausageUnpacker = sausageUnpacker;
+exports.truckUnpacker = truckUnpacker;
