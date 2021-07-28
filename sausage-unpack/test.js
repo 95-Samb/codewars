@@ -5,46 +5,46 @@ describe('Unpacking a box', () => {
   let subject = script.sausageUnpacker
   describe('For a single product', () => {
     it('returns blank when given blank', () => {
-      assert.equal(subject(""), "")
+      assert.deepEqual(subject(""), "")
     })
     it('returns l when given l', () => {
-      assert.equal(subject(["[l]"]), "l")
+      assert.deepEqual(subject(["[l]"]), ["l"])
     })
     it('returns 1 when given 1', () => {
-      assert.equal(subject(["[1]"]), "1")
+      assert.deepEqual(subject(["[1]"]), ["1"])
     })
     it('returns blank when given lx', () => {
-      assert.equal(subject(["[lx]"]), "")
+      assert.deepEqual(subject(["[lx]"]), [])
     })
     it('returns 11 when given 11', () => {
-      assert.equal(subject(["[11]"]), "11")
+      assert.deepEqual(subject(["[11]"]), ["11"])
     })
     it('returns blank when given 111 in no packaging', () => {
-      assert.equal(subject(["111"]), "")
+      assert.deepEqual(subject(["111"]), [])
     })
   })
   describe('For two products', () => {
     it('returns l when given [l],notSausage', () => {
-      assert.equal(subject(["[l]","notSausage"]), "l")
+      assert.deepEqual(subject(["[l]","notSausage"]), ["l"])
     })
     it('returns l1 when given [l],[1]', () => {
-      assert.equal(subject(["[l]","[1]"]), "l1")
+      assert.deepEqual(subject(["[l]","[1]"]), ["l","1"])
     })
     it('returns blank when given x,y', () => {
-      assert.equal(subject(["x","y"]), "")
+      assert.deepEqual(subject(["x","y"]), [])
     })
   })
   describe('For three or more products', () => {
     it('returns l when given [l],notSausage,alsoNotSausage', () => {
-      assert.equal(subject(["[l]","notSausage","alsoNotSausage"]), "l")
+      assert.deepEqual(subject(["[l]","notSausage","alsoNotSausage"]), ["l"])
     })
     it('returns @l when given [@],notSausage,[l]', () => {
-      assert.equal(subject(["[@]","notSausage","[l]"]), "@l")
+      assert.deepEqual(subject(["[@]","notSausage","[l]"]), ["@","l"])
     })
   })
 })
 
-describe('Unpacking a truck', () => {
+xdescribe('Unpacking a truck', () => {
   let subject = script.truckUnpacker
 
   describe('For a single box', () => {
@@ -90,7 +90,14 @@ describe('Unpacking a truck', () => {
       assert.equal(subject(test), "1 @ l")
     })
 
+    let second_test = [["[1]"],["[1]"],["[1]"],["[1]"],["[1]"]];
+
+    it('returns 1111 when given ${second_test}', () => {
+      assert.equal(subject(second_test), "1 1 1 1")
+    })
+
 
   })
 
 })
+

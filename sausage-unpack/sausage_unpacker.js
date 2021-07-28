@@ -5,12 +5,11 @@ const sausageUnpacker = (input) => {
     return ""
   }
 
-  output = ""
+  output = []
 
   for (var i = 0; i <= input.length - 1; i++) {
 
     if (input[i][0] != "[" || input[i][input[i].length - 1] != "]") {
-      output += ""
     }
     else {
 
@@ -19,9 +18,9 @@ const sausageUnpacker = (input) => {
     var uniqueBoxItems = [...new Set(sausagBox.split(""))]
 
     if (uniqueBoxItems.length != 1) {
-      output += ""
+
     }
-    else {output += sausagBox}
+    else {output.push(sausagBox)}
     }
 
   }
@@ -36,7 +35,7 @@ const truckUnpacker = (input) => {
 
   for (var i = 0; i <= input.length - 1; i++) {
 
-    if (input[i]) {output += sausageUnpacker(input[i])}
+    if (input[i] && i % 5 !== 4) {output += sausageUnpacker(input[i])}
 
   }
 
