@@ -7,39 +7,42 @@ describe('Unpacking a box', () => {
     it('returns blank when given blank', () => {
       assert.deepEqual(subject(""), "")
     })
-    it('returns l when given l', () => {
-      assert.deepEqual(subject(["[l]"]), ["l"])
-    })
-    it('returns 1 when given 1', () => {
-      assert.deepEqual(subject(["[1]"]), ["1"])
+    it('returns blank when given l', () => {
+      assert.deepEqual(subject(["[l]"]), [])
     })
     it('returns blank when given lx', () => {
       assert.deepEqual(subject(["[lx]"]), [])
     })
-    it('returns 11 when given 11', () => {
-      assert.deepEqual(subject(["[11]"]), ["11"])
+    it('returns blank when given 11', () => {
+      assert.deepEqual(subject(["[11]"]), [])
     })
     it('returns blank when given 111 in no packaging', () => {
       assert.deepEqual(subject(["111"]), [])
     })
+    it('returns 1111 when given 1111 ', () => {
+      assert.deepEqual(subject(["[1111]"]), ["1111"])
+    })
   })
   describe('For two products', () => {
-    it('returns l when given [l],notSausage', () => {
-      assert.deepEqual(subject(["[l]","notSausage"]), ["l"])
+    it('returns blank when given [l],notSausage', () => {
+      assert.deepEqual(subject(["[l]","notSausage"]), [])
     })
-    it('returns l1 when given [l],[1]', () => {
-      assert.deepEqual(subject(["[l]","[1]"]), ["l","1"])
+    it('returns blank when given [l],[1]', () => {
+      assert.deepEqual(subject(["[l]","[1]"]), [])
     })
     it('returns blank when given x,y', () => {
       assert.deepEqual(subject(["x","y"]), [])
     })
+    it('returns 1111,@@@@ when given 1111,@@@@', () => {
+      assert.deepEqual(subject(["[1111]","[@@@@]"]), ["1111","@@@@"])
+    })
   })
   describe('For three or more products', () => {
-    it('returns l when given [l],notSausage,alsoNotSausage', () => {
-      assert.deepEqual(subject(["[l]","notSausage","alsoNotSausage"]), ["l"])
+    it('returns blank when given [l],notSausage,alsoNotSausage', () => {
+      assert.deepEqual(subject(["[l]","notSausage","alsoNotSausage"]), [])
     })
-    it('returns @l when given [@],notSausage,[l]', () => {
-      assert.deepEqual(subject(["[@]","notSausage","[l]"]), ["@","l"])
+    it('returns @@@@ when given [@@@@],notSausage,[l]', () => {
+      assert.deepEqual(subject(["[@@@@]","notSausage","[l]"]), ["@@@@"])
     })
   })
 })
@@ -48,23 +51,24 @@ describe('Unpacking a truck', () => {
   let subject = script.truckUnpacker
 
   describe('For a single box', () => {
-    it('returns 1 when given [1]', () => {
-      assert.equal(subject([["[1]"]]), "1")
+    it('returns blank when given [1]', () => {
+      assert.equal(subject([["[1]"]]), "")
     })
 
-    it('returns 1@@l when given [[1],[@@],[l]]', () => {
-      assert.equal(subject([["[1]","[@@]","[l]"]]), "1 @ @ l")
+    it('returns 1111 when given [[1111],[@@],[l]]', () => {
+      assert.equal(subject([["[1111]","[@@]","[l]"]]), "1 1 1 1")
     })
   })
 
   describe('For two boxes', () => {
 
-    it('returns 1@ when given [[1]],[[@]]', () => {
-      assert.equal(subject([["[1]"],["[@]"]]), "1 @")
+    it('returns @@@@ when given [[11111]],[[@@@@]]', () => {
+      assert.equal(subject([["[11111]"],["[@@@@]"]]), "@ @ @ @")
     })
 
-    it('returns 1l@ when given [[1],[l]],[[cheese],[@]]', () => {
-      assert.equal(subject([["[1]","[l]"],["[cheese]","[@]"]]), "1 l @")
+    it('returns llll@@@@ when given [[1],[llll]],[[cheese],[@@@@]]', () => {
+      assert.equal(subject([["[1]","[llll]"],["[cheese]","[@@@@]"]]),
+        "l l l l @ @ @ @")
     })
 
 
@@ -72,28 +76,31 @@ describe('Unpacking a truck', () => {
 
   describe('For three or more boxes', () => {
 
-    it('returns 1@ when given [[1]],[[@]],[[@]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["[@]"]]), "1 @ @")
+    it('returns 1111 when given [[1111]],[[@]],[[@]]', () => {
+      assert.equal(subject([["[1111]"],["[@]"],["[@]"]]), "1 1 1 1")
     })
 
-    it('returns 1@@1 when given [[1]],[[@]],[[@]],[[1]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["[@]"],["[1]"]]), "1 @ @ 1")
+    it('returns blank when given [[11]],[[@]],[[@@@]],[[1]]', () => {
+      assert.equal(subject([["[11]"],["[@]"],["[@@@]"],["[1]"]]), "")
     })
 
-    it('returns 1@ when given [[1]],[[@]],[@],[[beans]]', () => {
-      assert.equal(subject([["[1]"],["[@]"],["@"],["[beans]"]]), "1 @")
+    it('returns @@@@ when given [[1]],[[@@@@]],[@@@@@],[[beans]]', () => {
+      assert.equal(subject([["[1]"],["[@@@@]"],["@@@@@"],["[beans]"]]), "@ @ @ @")
     })
 
-    let test = [["[1]","[@]","@"],["[beans]"],["[l]","chocolate",""]];
+    let test = [["[1111]","[@]","@"],["[beans]"],["[l]","chocolate",""]];
 
-    it('returns 1@l when given ${test}', () => {
-      assert.equal(subject(test), "1 @ l")
+    it('returns 1111 when given ${test}', () => {
+      assert.equal(subject(test), "1 1 1 1")
     })
 
-    let second_test = [["[1]"],["[1]"],["[1]"],["[1]"],["[1]"]];
+    let second_test = [["[1111]"],["[llll]"],["[||||]"],
+    ["[@@@@]"],["[CCCC]"]];
 
-    it('returns 1111 when given ${second_test}', () => {
-      assert.equal(subject(second_test), "1 1 1 1")
+    let answer = "1 1 1 1 l l l l | | | | @ @ @ @";
+
+    it('returns ${answer} when given ${second_test}', () => {
+      assert.equal(subject(second_test), answer)
     })
 
 

@@ -21,7 +21,7 @@ const sausageUnpacker = (input) => {
 
     }
 
-    // else if (sausagBox.length != 4) {}
+    else if (sausagBox.length != 4) {}
     else {output.push(sausagBox)}
     }
 
