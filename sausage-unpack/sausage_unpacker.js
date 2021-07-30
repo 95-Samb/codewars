@@ -20,6 +20,8 @@ const sausageUnpacker = (input) => {
     if (uniqueBoxItems.length != 1) {
 
     }
+
+    // else if (sausagBox.length != 4) {}
     else {output.push(sausagBox)}
     }
 
@@ -31,15 +33,21 @@ const sausageUnpacker = (input) => {
 
 const truckUnpacker = (input) => {
 
-  output = ""
+  output = []
 
   for (var i = 0; i <= input.length - 1; i++) {
 
-    if (input[i] && i % 5 !== 4) {output += sausageUnpacker(input[i])}
+    output = output.concat(sausageUnpacker(input[i]))
 
   }
 
-  return output.split("").join(" ");
+  for (var i = 4; i <= output.length - 1; i += 5) {
+
+    output.splice(i,1)
+
+  }
+
+  return output.join("").split("").join(" ");
 
 }
 

@@ -44,7 +44,7 @@ describe('Unpacking a box', () => {
   })
 })
 
-xdescribe('Unpacking a truck', () => {
+describe('Unpacking a truck', () => {
   let subject = script.truckUnpacker
 
   describe('For a single box', () => {
