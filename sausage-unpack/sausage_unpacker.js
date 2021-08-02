@@ -13,16 +13,12 @@ const sausageUnpacker = (input) => {
 
     var uniqueBoxItems = [...new Set(sausagBox.split(""))]
 
-    var failConditions = input[i][0] != "[" || sausagBox.length != 4
-      input[i][input[i].length - 1] != "]" || uniqueBoxItems.length != 1
+    var passConditions = input[i][0] == "[" && sausagBox.length == 4 &&
+      input[i][input[i].length - 1] == "]" && uniqueBoxItems.length == 1
 
+    if (passConditions) {output.push(sausagBox) }
 
-    if (failConditions) {
-    }
-
-    else {output.push(sausagBox)}
-    }
-
+  }
 
   return output;
 
