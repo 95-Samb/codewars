@@ -9,23 +9,20 @@ const sausageUnpacker = (input) => {
 
   for (var i = 0; i <= input.length - 1; i++) {
 
-    if (input[i][0] != "[" || input[i][input[i].length - 1] != "]") {
-    }
-    else {
-
     var sausagBox = input[i].slice(1,-1)
 
     var uniqueBoxItems = [...new Set(sausagBox.split(""))]
 
-    if (uniqueBoxItems.length != 1) {
+    var failConditions = input[i][0] != "[" || sausagBox.length != 4
+      input[i][input[i].length - 1] != "]" || uniqueBoxItems.length != 1
 
+
+    if (failConditions) {
     }
 
-    else if (sausagBox.length != 4) {}
     else {output.push(sausagBox)}
     }
 
-  }
 
   return output;
 
