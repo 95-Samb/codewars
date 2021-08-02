@@ -36,7 +36,7 @@ const truckUnpacker = (input) => {
 
   for (var i = 4; i <= output.length - 1; i += 5) {
 
-    output.splice(i,1)
+    output[i] = "";
 
   }
 

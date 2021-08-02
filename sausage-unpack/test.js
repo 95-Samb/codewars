@@ -103,6 +103,17 @@ describe('Unpacking a truck', () => {
       assert.equal(subject(second_test), answer)
     })
 
+    let third_test = [["[1111]"],["[llll]"],["[||||]"],
+    ["[@@@@]"],["[CCCC]"],["[1111]"],["[llll]"],["[||||]"],
+    ["[@@@@]"],["[CCCC]"]];
+
+    let third_answer = "1 1 1 1 l l l l | | | | @ @ @ @" +
+    " 1 1 1 1 l l l l | | | | @ @ @ @"
+
+    it('returns ${third_answer} when given ${third_test}', () => {
+      assert.equal(subject(third_test), third_answer)
+    })
+
 
   })
 
