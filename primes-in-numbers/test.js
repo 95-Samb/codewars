@@ -12,6 +12,14 @@ describe("Finding prime decomposition", () =>{
     it("returns null for 0", () => {
       assert.equal(subject.primeInNumbers(0),null)
     })
+
+    it("returns 2 for 2", () => {
+      assert.equal(subject.primeInNumbers(2),"(2)")
+    })
+
+    it("returns 5 for 5", () => {
+      assert.equal(subject.primeInNumbers(5),"(5)")
+    })
    })
 
 
