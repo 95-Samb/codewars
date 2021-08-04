@@ -3,7 +3,7 @@ const subject = require("./prime_in_numbers")
 
 describe("Finding prime decomposition", () =>{
 
-   describe("for prime numbers", () => {
+  describe("for prime numbers", () => {
 
     it("returns null for 1", () => {
       assert.equal(subject.primeInNumbers(1),null)
@@ -20,7 +20,15 @@ describe("Finding prime decomposition", () =>{
     it("returns 5 for 5", () => {
       assert.equal(subject.primeInNumbers(5),"(5)")
     })
-   })
+  })
+
+  describe("for small numbers", () => {
+
+    it("returns 2**2 for 4", () => {
+      assert.equal(subject.primeInNumbers(4),"(2**2)")
+    })
+
+  })
 
 
 
