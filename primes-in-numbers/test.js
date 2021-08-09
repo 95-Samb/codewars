@@ -28,6 +28,11 @@ describe("Finding prime decomposition", () =>{
       assert.equal(subject.primeInNumbers(4),"(2**2)")
     })
 
+    it("returns 2**7 for 128", () => {
+      assert.equal(subject.primeInNumbers(128),"(2**7)")
+    })
+
+
   })
 
 
@@ -40,8 +45,12 @@ describe("finding all prime factors",() => {
     assert.deepEqual(subject.primeFactors(4),[2,2])
   })
 
-  it("returns 2,2 for 4", () => {
+  it("returns 2,2,2,2,2,2,2 for 128", () => {
     assert.deepEqual(subject.primeFactors(128),[2,2,2,2,2,2,2])
+  })
+
+  it("returns 2,3,17 for 102", () => {
+    assert.deepEqual(subject.primeFactors(102),[2,3,17])
   })
 
 })

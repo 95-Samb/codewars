@@ -52,7 +52,23 @@ const primeInNumbers =  (input) => {
 
   if (isPrime(input)) {return `(${input})`}
 
-  else {return "(2**2)"}
+  output = ""
+
+  primeDecomposition = primeFactors(input)
+
+  uniqePrimes = [...new Set(primeDecomposition)]
+
+  uniqePrimes.forEach(e => {
+    count = primeDecomposition.filter(prime => prime == e).length;
+    if (count == 1) {
+      output += `(${e})`
+    }
+    else { output += `(${e}**${count})`}
+  })
+
+
+
+  return output
   
 
 }
