@@ -21,6 +21,30 @@ const isPrime = (n) =>
   }
 }
 
+const primeFactors =  (input) => {
+
+  largestFactor = input
+
+  primes = []
+
+  while (isPrime(largestFactor) === false) {
+
+    for (var i = 2; i < largestFactor; i++) {
+      if (largestFactor % i == 0) {
+        primes.push(i);
+        largestFactor /= i;
+        i = 1
+      }
+    }
+  }
+
+  primes.push(largestFactor)
+
+  return primes;
+
+
+}
+
 
 const primeInNumbers =  (input) => {
 
@@ -34,3 +58,4 @@ const primeInNumbers =  (input) => {
 }
 
 exports.primeInNumbers = primeInNumbers;
+exports.primeFactors = primeFactors;

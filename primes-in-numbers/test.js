@@ -33,3 +33,15 @@ describe("Finding prime decomposition", () =>{
 
 
 })
+
+describe("finding all prime factors",() => {
+
+  it("returns 2,2 for 4", () => {
+    assert.deepEqual(subject.primeFactors(4),[2,2])
+  })
+
+  it("returns 2,2 for 4", () => {
+    assert.deepEqual(subject.primeFactors(128),[2,2,2,2,2,2,2])
+  })
+
+})
