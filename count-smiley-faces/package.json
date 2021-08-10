@@ -1,0 +1,14 @@
+{
+  "name": "count-smiley-faces",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "mocha": "^8.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
