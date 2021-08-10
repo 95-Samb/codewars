@@ -11,4 +11,21 @@ describe("finding amount of smileys", () =>{
   it("returns 1 for [:)]", () => {
     assert.equal(subject.countSmileys([':)']),1)
   })
+
+  it("returns 0 for [:(]", () => {
+    assert.equal(subject.countSmileys([':(']),0)
+  })
+
+  it("returns 1 for [:D]", () => {
+    assert.equal(subject.countSmileys([':D']),1)
+  })
+
+  it("returns 1 for [;D]", () => {
+    assert.equal(subject.countSmileys([';D']),1)
+  })
+
+  it("returns 0 for [;gD]", () => {
+    assert.equal(subject.countSmileys([';gD']),0)
+  })
+
 })
