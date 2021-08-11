@@ -1,12 +1,17 @@
 const countSmileys = (input) => {
-  if (input.length > 0) {
 
-    incorrectChars = input[0].replace(/[:;\)D-]/g,"");
+  var smileyCount = 0;
 
-    if (incorrectChars.length == 0 || incorrectChars == "~") {return 1};
+  input.forEach(e => {
 
-  }
-  return 0;
+    incorrectChars = e.replace(/[:;\)D-]/g,"");
+
+    if (incorrectChars.length == 0 || incorrectChars == "~") {smileyCount += 1};
+
+  })
+
+  return smileyCount;
+
 }
 
 exports.countSmileys = countSmileys;

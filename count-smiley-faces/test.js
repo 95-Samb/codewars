@@ -28,4 +28,8 @@ describe("finding amount of smileys", () =>{
     assert.equal(subject.countSmileys([';gD']),0)
   })
 
+  it("returns 3 for [;D,:),:-),:O,;P]", () => {
+    assert.equal(subject.countSmileys([";D",":)",":-)",":O",";P"]),3)
+  })
+
 })
