@@ -4,9 +4,13 @@ const countSmileys = (input) => {
 
   input.forEach(e => {
 
+    isSmiley = e.match(/;|:/) != null && e.match(/\)|D/) != null
+
     incorrectChars = e.replace(/[:;\)D-]/g,"");
 
-    if (incorrectChars.length == 0 || incorrectChars == "~") {smileyCount += 1};
+    if (isSmiley && incorrectChars.length == 0 || incorrectChars.match("~") != null ){
+      smileyCount += 1
+    };
 
   })
 
