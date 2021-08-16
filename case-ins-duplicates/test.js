@@ -19,4 +19,9 @@ describe("#duplicateCount", () => {
     assert.equal(subject.duplicateCount("ab"),0)
   })
 
+  it("returns 1 for aba", () => {
+    assert.equal(subject.duplicateCount("aba"),1)
+  })
+
+
 })

@@ -1,10 +1,21 @@
 const duplicateCount = (input) => {
-  
-  if(input.length <= 1) {return 0;}
 
-  if(input[0] != input[1]) {return 0;}
+  sortedInput = input.split("").sort().join("")
 
-  return 1
+  duplicates = 0
+
+  while (sortedInput.length != 0) {
+
+    first = sortedInput.indexOf(sortedInput[0])
+
+    last = sortedInput.lastIndexOf(sortedInput[0])
+
+    if(first != last ) { duplicates += 1}
+
+    sortedInput = sortedInput.substr(last + 1)
+  }
+
+  return duplicates
 
 }
 
