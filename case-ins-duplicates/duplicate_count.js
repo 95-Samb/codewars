@@ -1,6 +1,6 @@
 const duplicateCount = (input) => {
 
-  sortedInput = input.split("").sort().join("")
+  sortedInput = input.toLowerCase().split("").sort().join("")
 
   duplicates = 0
 

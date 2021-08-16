@@ -23,5 +23,13 @@ describe("#duplicateCount", () => {
     assert.equal(subject.duplicateCount("aba"),1)
   })
 
+  it("returns 1 for abacdaffgab", () => {
+    assert.equal(subject.duplicateCount("abacdaffgab"),3)
+  })
+
+  it("returns 1 for abAcdafFgaB", () => {
+    assert.equal(subject.duplicateCount("abAcdafFgaB"),3)
+  })
+
 
 })
