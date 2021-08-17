@@ -1,6 +1,10 @@
 const titleCase = (input) => {
 
-  return input.toUpperCase()
+  if (input == "") {return "";}
+
+  output = input[0].toUpperCase() + input.slice(1)
+
+  return output
 
 }
 
