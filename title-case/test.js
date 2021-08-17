@@ -19,4 +19,12 @@ describe("#titleCase", () => {
   it("returns Be for Be", () => {
     assert.equal(subject.titleCase("Be"),"Be")
   })
+
+  it("returns Be Cat for be cat", () => {
+    assert.equal(subject.titleCase("be cat"),"Be Cat")
+  })
+
+  it("returns Be Cat for be cat not dog", () => {
+    assert.equal(subject.titleCase("be cat not dog"),"Be Cat Not Dog")
+  })
 })
