@@ -24,11 +24,23 @@ describe("#titleCase", () => {
     assert.equal(subject.titleCase("be cat"),"Be Cat")
   })
 
-  it("returns Be Cat for be cat not dog", () => {
+  it("returns Be Cat Not Dog for be cat not dog", () => {
     assert.equal(subject.titleCase("be cat not dog"),"Be Cat Not Dog")
   })
 
-  it("returns Be Cat for be cat not dog and not exempted", () => {
+  it("returns Be Cat not Dog for be cat not dog and not exempted", () => {
     assert.equal(subject.titleCase("be cat not dog","not"),"Be Cat not Dog")
+  })
+
+  it("returns Be a Cat not Dog for be a cat not dog and not,a exempted", () => {
+    assert.equal(subject.titleCase("be a cat not dog","a not"),"Be a Cat not Dog")
+  })
+
+  it("returns Be of Cat not O dog for be of cat not O dog and not,a exempted", () => {
+    assert.equal(subject.titleCase("be of cat not o dog","of not"),"Be of Cat not O Dog")
+  })
+
+  it("returns Be of Cat not O dog for be of cat not O dog and not,a,be exempted", () => {
+    assert.equal(subject.titleCase("be of cat not o dog","of not be"),"Be of Cat not O Dog")
   })
 })

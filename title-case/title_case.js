@@ -8,7 +8,7 @@ const titleCase = (title,minorWords) => {
       return word[0].toUpperCase() + word.slice(1)
     }
 
-    else if(title.indexOf(word) == 0 || minorWords.includes(word) == false){
+    else if(title.indexOf(word) == 0 || minorWords.split(" ").indexOf(word) == -1){
 
       return word[0].toUpperCase() + word.slice(1)
 
