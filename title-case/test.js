@@ -43,4 +43,8 @@ describe("#titleCase", () => {
   it("returns Be of Cat not O dog for be of cat not O dog and not,a,be exempted", () => {
     assert.equal(subject.titleCase("be of cat not o dog","of not be"),"Be of Cat not O Dog")
   })
+
+  it("returns The Wind in the Willows for THE WIND IN THE WILLOWS and The In exempted", () => {
+    assert.equal(subject.titleCase("THE WIND IN THE WILLOWS","The In"),"The Wind in the Willows")
+  })
 })

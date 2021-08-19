@@ -5,20 +5,20 @@ const titleCase = (title,minorWords) => {
   output = title.split(" ").map((word) => {
 
     if(minorWords === undefined){
-      return word[0].toUpperCase() + word.slice(1)
+      return word[0].toUpperCase() + word.toLowerCase().slice(1)
     }
 
-    else if(title.indexOf(word) == 0 || minorWords.split(" ").indexOf(word) == -1){
+    else if(minorWords.toLowerCase().split(" ").indexOf(word.toLowerCase()) == -1){
 
-      return word[0].toUpperCase() + word.slice(1)
+      return word[0].toUpperCase() + word.toLowerCase().slice(1)
 
     }
 
-    else {return word}
+    else {return word.toLowerCase()}
 
     }).join(" ")
 
-  return output
+  return output[0].toUpperCase() + output.slice(1)
 
 }
 
