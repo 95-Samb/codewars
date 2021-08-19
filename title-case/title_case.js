@@ -4,17 +4,17 @@ const titleCase = (title,minorWords) => {
 
   output = title.split(" ").map((word) => {
 
-    if(minorWords === undefined){
-      return word[0].toUpperCase() + word.toLowerCase().slice(1)
+    captilisedLetter = word[0].toUpperCase()
+
+    lowerCasedWord = word.toLowerCase()
+
+    if(minorWords === undefined ||minorWords.toLowerCase().split(" ").indexOf(lowerCasedWord) == -1){
+
+      return captilisedLetter + lowerCasedWord.slice(1)
+
     }
 
-    else if(minorWords.toLowerCase().split(" ").indexOf(word.toLowerCase()) == -1){
-
-      return word[0].toUpperCase() + word.toLowerCase().slice(1)
-
-    }
-
-    else {return word.toLowerCase()}
+    else {return lowerCasedWord}
 
     }).join(" ")
 
