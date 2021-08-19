@@ -1,11 +1,22 @@
-const titleCase = (input) => {
+const titleCase = (title,minorWords) => {
 
-  if (input == "") {return "";}
+  if (title == "") {return "";}
 
-  output = input.split(" ").map(word => word[0].toUpperCase() + word.slice(1))
-  .join(" ")
+  output = title.split(" ").map((word) => {
 
-  //output = input[0].toUpperCase() + input.slice(1)
+    if(minorWords === undefined){
+      return word[0].toUpperCase() + word.slice(1)
+    }
+
+    else if(title.indexOf(word) == 0 || minorWords.includes(word) == false){
+
+      return word[0].toUpperCase() + word.slice(1)
+
+    }
+
+    else {return word}
+
+    }).join(" ")
 
   return output
 
