@@ -8,7 +8,7 @@ const titleCase = (title,minorWords) => {
 
     lowerCasedWord = word.toLowerCase()
 
-    if(minorWords === undefined ||minorWords.toLowerCase().split(" ").indexOf(lowerCasedWord) == -1){
+    if(minorWords === undefined || minorWords.toLowerCase().split(" ").indexOf(lowerCasedWord) == -1){
 
       return captilisedLetter + lowerCasedWord.slice(1)
 
