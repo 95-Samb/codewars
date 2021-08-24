@@ -14,6 +14,10 @@ describe("RomanNumerals", () => {
       assert.equal(subject.toRoman(2),"II");
     })
 
+    it("returns IV for 4", () => {
+      assert.equal(subject.toRoman(4),"IV");
+    })
+
     it("returns V for 5", () => {
       assert.equal(subject.toRoman(5),"V");
     })
@@ -26,12 +30,24 @@ describe("RomanNumerals", () => {
       assert.equal(subject.toRoman(11),"XI");
     })
 
+    it("returns XL for 40", () => {
+      assert.equal(subject.toRoman(40),"XL");
+    })
+
+    it("returns XX for 20", () => {
+      assert.equal(subject.toRoman(20),"XX");
+    })
+
     it("returns XV for 15", () => {
       assert.equal(subject.toRoman(15),"XV");
     })
 
-    it("returns MDCLXVI for 15", () => {
+    it("returns MDCLXVI for 1666", () => {
       assert.equal(subject.toRoman(1666),"MDCLXVI");
+    })
+
+    it("returns MLI for 1051", () => {
+      assert.equal(subject.toRoman(1051),"MLI");
     })
   })
 })

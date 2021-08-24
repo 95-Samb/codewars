@@ -35,6 +35,11 @@ class RomanNumerals {
         integer -= 1000}
     }
 
+    output = output.replace("IIII","IV")
+    output = output.replace("XXXX","XL")
+    output = output.replace("CCCC","CD")
+
+
     return output
 
   }
