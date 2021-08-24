@@ -1,7 +1,13 @@
 class RomanNumerals {
   
   toRoman(integer) {
-    return "I";
+    if(integer < 5) {return "I".repeat(integer)}
+
+    if(integer < 10) {return "V" + "I".repeat(integer - 5)}
+
+    return "X" + "I".repeat(integer - 10)
+
+
   }
 }
 
