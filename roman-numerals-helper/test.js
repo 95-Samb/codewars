@@ -29,5 +29,9 @@ describe("RomanNumerals", () => {
     it("returns XV for 15", () => {
       assert.equal(subject.toRoman(15),"XV");
     })
+
+    it("returns MDCLXVI for 15", () => {
+      assert.equal(subject.toRoman(1666),"MDCLXVI");
+    })
   })
 })
