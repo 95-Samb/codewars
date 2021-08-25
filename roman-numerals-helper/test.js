@@ -50,4 +50,15 @@ describe("RomanNumerals", () => {
       assert.equal(subject.toRoman(1051),"MLI");
     })
   })
+
+  describe("#fromRoman", () => {
+
+    it("returns 1 for I", () => {
+      assert.equal(subject.fromRoman("I"),1)
+    })
+
+    it("returns 5 for V", () => {
+      assert.equal(subject.fromRoman("V"),5)
+    })
+  })
 })

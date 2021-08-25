@@ -4,18 +4,18 @@ class RomanNumerals {
 
     var output = ""
 
-    let associative_letters = [
-      [1000,"M"],[500,"D"],[100,"C"],[50,"L"],
-      [10,"X"],[5,"V"],[1,"I"]
+    let associativeLetters = [
+      ["M",1000],["D",500],["C",100],["L",50],
+      ["X",10],["V",5],["I",1]
       ];
 
     var i = 0
 
-    while (i < associative_letters.length) {
+    while (i < associativeLetters.length) {
 
-      if (integer >= associative_letters[i][0]) {
-        output += associative_letters[i][1]
-        integer -= associative_letters[i][0]
+      if (integer >= associativeLetters[i][1]) {
+        output += associativeLetters[i][0]
+        integer -= associativeLetters[i][1]
       }
 
       else {i++}
@@ -29,7 +29,18 @@ class RomanNumerals {
     return output
 
   }
+
+  fromRoman(input) {
+
+    let associativeLetters = new Map([
+      ["M",1000],["D",500],["C",100],["L",50],
+      ["X",10],["V",5],["I",1]
+      ]);
+
+    return associativeLetters.get(input)
+  }
 }
 
 let helper = new RomanNumerals;
 exports.toRoman = helper.toRoman
+exports.fromRoman = helper.fromRoman
