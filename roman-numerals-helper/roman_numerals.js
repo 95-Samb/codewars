@@ -40,7 +40,14 @@ class RomanNumerals {
     var output = 0
 
     for (var i = 0; i < input.length; i++) {
-      output += associativeLetters.get(input[i])
+
+      if(["IV"].some((x) => x == input.substr(i,2))) {
+
+        output -= associativeLetters.get(input[i])
+      }
+
+      else {output += associativeLetters.get(input[i])}
+
     }
 
     return output

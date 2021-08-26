@@ -61,6 +61,10 @@ describe("RomanNumerals", () => {
       assert.equal(subject.fromRoman("II"),2)
     })
 
+    it("returns 4 for IV", () => {
+      assert.equal(subject.fromRoman("IV"),4)
+    })
+
     it("returns 5 for V", () => {
       assert.equal(subject.fromRoman("V"),5)
     })
