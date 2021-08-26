@@ -37,7 +37,14 @@ class RomanNumerals {
       ["X",10],["V",5],["I",1]
       ]);
 
-    return associativeLetters.get(input)
+    var output = 0
+
+    for (var i = 0; i < input.length; i++) {
+      output += associativeLetters.get(input[i])
+    }
+
+    return output
+
   }
 }
 

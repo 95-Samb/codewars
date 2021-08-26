@@ -57,8 +57,16 @@ describe("RomanNumerals", () => {
       assert.equal(subject.fromRoman("I"),1)
     })
 
+    it("returns 2 for II", () => {
+      assert.equal(subject.fromRoman("II"),2)
+    })
+
     it("returns 5 for V", () => {
       assert.equal(subject.fromRoman("V"),5)
+    })
+
+    it("returns 1666 for MDCLXVI", () => {
+      assert.equal(subject.fromRoman("MDCLXVI"),1666);
     })
   })
 })
