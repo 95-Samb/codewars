@@ -2,29 +2,10 @@ class RomanNumerals {
   
   toRoman(integer) {
 
-    var output = ""
+    var output = "I".repeat(integer)
 
-    let associativeLetters = [
-      ["M",1000],["D",500],["C",100],["L",50],
-      ["X",10],["V",5],["I",1]
-      ];
-
-    var i = 0
-
-    while (i < associativeLetters.length) {
-
-      if (integer >= associativeLetters[i][1]) {
-        output += associativeLetters[i][0]
-        integer -= associativeLetters[i][1]
-      }
-
-      else {i++}
-    }
-
-    output = output.replace("IIII","IV")
-    output = output.replace("XXXX","XL")
-    output = output.replace("CCCC","CD")
-
+    output = output.replace("IIIIIIIII","IX")
+    .replace("I".repeat(5),"V").replace("I".repeat(4),"IV")
 
     return output
 
