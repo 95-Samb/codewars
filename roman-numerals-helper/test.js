@@ -40,27 +40,27 @@ describe("RomanNumerals", () => {
         assert.equal(subject.toRoman(11),"XI");
       })
 
-      xit("returns XL for 40", () => {
+      it("returns XL for 40", () => {
         assert.equal(subject.toRoman(40),"XL");
       })
 
-      xit("returns XX for 20", () => {
+      it("returns XX for 20", () => {
         assert.equal(subject.toRoman(20),"XX");
       })
 
-      xit("returns XV for 15", () => {
+      it("returns XV for 15", () => {
         assert.equal(subject.toRoman(15),"XV");
       })
 
-      xit("returns MDCLXVI for 1666", () => {
+      it("returns MDCLXVI for 1666", () => {
         assert.equal(subject.toRoman(1666),"MDCLXVI");
       })
 
-      xit("returns MLI for 1051", () => {
+      it("returns MLI for 1051", () => {
         assert.equal(subject.toRoman(1051),"MLI");
       })
 
-      xit("returns CMXCIX for 999", () => {
+      it("returns CMXCIX for 999", () => {
         assert.equal(subject.toRoman(999),"CMXCIX");
       })
 

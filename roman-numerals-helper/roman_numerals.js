@@ -4,7 +4,7 @@ class RomanNumerals {
 
     var output = ""
 
-    var decimalLetters = ["IVX","XLC"]
+    var decimalLetters = ["IVX","XLC","CDM","M"]
 
     var j = 0
 
