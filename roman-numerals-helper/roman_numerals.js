@@ -2,10 +2,21 @@ class RomanNumerals {
   
   toRoman(integer) {
 
-    var output = "I".repeat(integer)
+    var output = ""
 
-    output = output.replace("IIIIIIIII","IX")
-    .replace("I".repeat(5),"V").replace("I".repeat(4),"IV")
+    var decimalLetters = ["IVX","XLC"]
+
+    var j = 0
+
+    for (var i = integer.toString().length - 1; i >= 0; i--) {
+
+      output = decimalLetters[j][0].repeat(parseInt(integer.toString()[i])) + output
+      output = output.replace(decimalLetters[j][0].repeat(9),decimalLetters[j][0] + decimalLetters[j][2])
+      .replace(decimalLetters[j][0].repeat(5),decimalLetters[j][1]).replace(decimalLetters[j][0].repeat(4),decimalLetters[j][0] + decimalLetters[j][1])
+
+      j += 1
+
+    }
 
     return output
 
