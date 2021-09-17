@@ -12,7 +12,8 @@ class RomanNumerals {
 
       output = decimalLetters[j][0].repeat(parseInt(integer.toString()[i])) + output
       output = output.replace(decimalLetters[j][0].repeat(9),decimalLetters[j][0] + decimalLetters[j][2])
-      .replace(decimalLetters[j][0].repeat(5),decimalLetters[j][1]).replace(decimalLetters[j][0].repeat(4),decimalLetters[j][0] + decimalLetters[j][1])
+      .replace(decimalLetters[j][0].repeat(5),decimalLetters[j][1])
+      .replace(decimalLetters[j][0].repeat(4),decimalLetters[j][0] + decimalLetters[j][1])
 
       j += 1
 
@@ -33,7 +34,7 @@ class RomanNumerals {
 
     for (var i = 0; i < input.length; i++) {
 
-      if(["IV"].some((x) => x == input.substr(i,2))) {
+      if(["IV","IX","XL","XC","CD","CM"].some((x) => x == input.substr(i,2))) {
 
         output -= associativeLetters.get(input[i])
       }

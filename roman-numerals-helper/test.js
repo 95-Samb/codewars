@@ -85,6 +85,18 @@ describe("RomanNumerals", () => {
       assert.equal(subject.fromRoman("V"),5)
     })
 
+    it("returns 9 for IX", () => {
+      assert.equal(subject.fromRoman("IX"),9)
+    })
+
+    it("returns 41 for XLI", () => {
+      assert.equal(subject.fromRoman("XLI"),41)
+    })
+
+    it("returns 999 for CMXCIX", () => {
+      assert.equal(subject.fromRoman("CMXCIX"),999)
+    })
+
     it("returns 1666 for MDCLXVI", () => {
       assert.equal(subject.fromRoman("MDCLXVI"),1666);
     })
