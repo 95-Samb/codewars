@@ -10,11 +10,11 @@ class PaginationHelper
   end
   
   def item_count
-    0
+    @collection.length
   end
   
   def page_count
-    
+    item_count / @items_per_page
   end
 
   def page_item_count(page_index)
