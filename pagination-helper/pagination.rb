@@ -14,7 +14,7 @@ class PaginationHelper
   end
   
   def page_count
-    item_count / @items_per_page
+    (item_count.to_f / @items_per_page).ceil
   end
 
   def page_item_count(page_index)
