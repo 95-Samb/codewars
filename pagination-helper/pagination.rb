@@ -18,6 +18,17 @@ class PaginationHelper
   end
 
   def page_item_count(page_index)
+
+    if (page_index + 1) > page_count
+      return -1
+    end
+
+    if (page_index + 1) == page_count
+      return item_count % @items_per_page == 0 ? 
+        @items_per_page : item_count % @items_per_page  
+    end
+
+    @items_per_page
     
   end
 
