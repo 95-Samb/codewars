@@ -91,6 +91,34 @@ describe PaginationHelper do
 
     end
 
+    it "returns 0 for [a,more,complicated,set,of,words],3 and 1" do
+
+      subject = PaginationHelper.new(["a","more","complicated",
+        "set","of","words"],3)
+
+      expect(subject.page_item_count(1)).to eq(3)
+
+    end
+
+  end
+
+  context "#page_index" do 
+
+    it "returns 0 for [a],1 and 0" do 
+
+      subject = PaginationHelper.new(["a"],1)
+
+      expect(subject.page_index(0)).to eq(0)
+
+    end
+
+    it "returns 1 for [a,b],1 and 1" do 
+
+      subject = PaginationHelper.new(["a","b"],1)
+
+      expect(subject.page_index(1)).to eq(1)
+
+    end
 
   end
 

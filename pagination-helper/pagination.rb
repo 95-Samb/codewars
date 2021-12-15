@@ -33,7 +33,7 @@ class PaginationHelper
   end
 
   def page_index(item_index) 
-   
+    item_index
   end
 
 end
