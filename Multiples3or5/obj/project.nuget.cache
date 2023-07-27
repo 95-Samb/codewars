@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PKyr0Sz8j++W+pkelcNX41uj1mVJ2OzHCycCEGi2iABbIHfDv5SRf/UFs4aIdWdgIH1ADpP3sayQR8NfeNj4QQ==",
+  "success": true,
+  "projectFilePath": "/Users/sam.brown/codewars/Multiples3or5/Multiples3or5.csproj",
+  "expectedPackageFiles": [
+    "/Users/sam.brown/.nuget/packages/microsoft.netcore.app.ref/6.0.16/microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "/Users/sam.brown/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.16/microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "/Users/sam.brown/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.16/microsoft.netcore.app.host.osx-arm64.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

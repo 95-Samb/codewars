@@ -1,0 +1,15 @@
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.csproj.AssemblyReference.cache
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.AssemblyInfoInputs.cache
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.AssemblyInfo.cs
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.csproj.CoreCompileInputs.cache
+/Users/sam.brown/codewars/triple-shiftian/src/bin/Debug/net7.0/triple-shiftian
+/Users/sam.brown/codewars/triple-shiftian/src/bin/Debug/net7.0/triple-shiftian.deps.json
+/Users/sam.brown/codewars/triple-shiftian/src/bin/Debug/net7.0/triple-shiftian.runtimeconfig.json
+/Users/sam.brown/codewars/triple-shiftian/src/bin/Debug/net7.0/triple-shiftian.dll
+/Users/sam.brown/codewars/triple-shiftian/src/bin/Debug/net7.0/triple-shiftian.pdb
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.dll
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/refint/triple-shiftian.dll
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.pdb
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/triple-shiftian.genruntimeconfig.cache
+/Users/sam.brown/codewars/triple-shiftian/src/obj/Debug/net7.0/ref/triple-shiftian.dll
