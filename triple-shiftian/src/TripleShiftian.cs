@@ -9,6 +9,13 @@ public class TripleShiftian
 
     public int Execute(int[] firstThree, int n)
     {
-        return 1;
+        if (n < 3)
+        {
+            return firstThree[n];
+        }
+        else
+        {
+            return 9;
+        }
     }
 }
