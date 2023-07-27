@@ -7,9 +7,9 @@ public class TripleShiftian
         
     }
 
-    public int Execute(List<int> firstThree, int n)
+    public long Execute(List<long> firstThree, int n)
     {
-        List<int> currentSequence = firstThree;
+        List<long> currentSequence = firstThree;
         if (n < 3)
         {
             return firstThree[n];
@@ -18,7 +18,7 @@ public class TripleShiftian
         while (currentSequence.Count < n + 1)
         {
             int i = currentSequence.Count;
-            int nextElement = 4 * currentSequence[i - 1] - 5 * currentSequence[i - 2] + 3 * currentSequence[i - 3];
+            long nextElement = 4 * currentSequence[i - 1] - 5 * currentSequence[i - 2] + 3 * currentSequence[i - 3];
             currentSequence.Add(nextElement);
         }
         return currentSequence.Last();
